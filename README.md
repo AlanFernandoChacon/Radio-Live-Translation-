@@ -1,6 +1,90 @@
-# 🎙️ About Danish Radio Transcriber
-Overview
-The Danish Radio Transcriber is a Python-based application that captures live Danish radio streams, transcribes the audio into text in real-time (or with a slight delay), and translates the transcriptions into Spanish and English. It leverages modern AI technologies to provide accurate transcriptions and translations, making it easier for non-Danish speakers to understand live radio broadcasts.
+# 🎙️ Danish Radio Transcriber
+
+## Overview  
+A Python app that records live Danish radio, transcribes it with Whisper, translates into Spanish & English and displays everything in your terminal.
+
+## Prerequisites  
+- Python 3.8+  
+- ffmpeg (incl. ffplay)  
+  ```bash
+  brew install ffmpeg   # macOS/Homebrew 
+
+Installation & Setup
+1 Clone this repo and cd terminal-version/.
+Create & activate a venv:
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+Install Python dependencies:
+
+pip install openai python-dotenv rich 
+
+
+Copy .env.example → .env and add your key:
+
+OPENAI_API_KEY= (YOUR KEY) 
+
+
+
+Usage
+Verify ffmpeg & ffplay are on your $PATH.
+Make the script executable & run it:
+chmod +x transcribe_ver_3.py
+./transcribe_ver_3.py
+
+The app will:
+Record 60 s blocks from the default URL
+Transcribe Danish → text via Whisper
+Translate text → Spanish & English
+Show panels in terminal (Rich)
+Optionally play back the clip
+Append logs to transcripcion_YYYY-MM-DD.txt
+Configuration
+
+RADIO_URL: change to any Icecast/SHOUTcast MP3 stream
+BLOCK_DURATION: seconds per segment
+LANGUAGE: any ISO-639 code (da, es, en, fr, de, it, pt, ru, zh, etc.)
+How It Works
+Capture with ffmpeg → WAV.
+Transcribe via openai.audio.transcriptions.create(…).
+Translate via openai.chat.completions.create(…).
+Render panels in terminal (Rich).
+Log audio & text to disk.
+Tech Stack
+Python 3
+ffmpeg / ffplay
+OpenAI Whisper & GPT-3.5-turbo
+rich for console UI
+python-dotenv
+
+Contributing & License
+Feel free to open issues or PRs. Please keep your API key out of commits—use .env.
+
+This README is generated for the “Danish Radio Transcriber” project.
+
+
+
+
+
+Prerequisites
+Python 3.8+
+ffmpeg (includes ffplay)
+macOS (Homebrew): brew install ffmpeg
+Git (optional, for cloning and version control)
+Installation & Setup
+Clone your repo and cd into the terminal-version folder.
+Create & activate a virtual environment:
+Install Python dependencies:
+Create a .env file in the same directory with your key:
+Usage
+Ensure ffmpeg and ffplay are on your $PATH.
+Give the script execute permission and run it:
+The app will record 60-second audio blocks, transcribe Danish → text (Whisper), translate into Spanish & English, display panels, play back audio, and append to a daily log file.
+
+
+
+The Danish Radio Transcriber is a Python-based application that captures live Danish(Or other languages)  radio streams, transcribes the audio into text in real-time (or with a slight delay), and translates the transcriptions into Spanish and English. It leverages modern AI technologies to provide accurate transcriptions and translations, making it easier for non-Danish speakers to understand live radio broadcasts.
 
 Purpose
 The primary goal of this project is to enable users to listen to Danish radio stations while simultaneously accessing transcriptions and translations of the content in multiple languages. This is particularly useful for:
