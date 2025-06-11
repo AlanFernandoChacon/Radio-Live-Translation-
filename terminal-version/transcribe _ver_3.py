@@ -11,7 +11,7 @@ from queue import Queue
 
 # Cargar API Key desde .env
 load_dotenv()
-openai.api_key =
+openai.api_key = os.getenv("OPENAI_API_KEY")
 
 # Configuración
 RADIO_URL = "https://live-icy.dr.dk/A/A03H.mp3"
