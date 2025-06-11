@@ -12,12 +12,13 @@ from queue import Queue
 
 # Cargar API Key desde .env
 load_dotenv()
+# Cargar API Key desde .env (no incluir la clave en el repositorio)
 openai.api_key = os.getenv("OPENAI_API_KEY")
+
 # Configuración
-RADIO_URL = "https://live-icy.dr.dk/A/A03H.mp3" # but you can add others radios 
+RADIO_URL = "https://live-icy.dr.dk/A/A03H.mp3"  # URL de la radio danesa
 BLOCK_DURATION = 60  # segundos
-LANGUAGE = "da" # but you can choose other languages 
-#• Alemán (de) • Italiano (it) • Portugués (pt)• Japonés (ja)• Chino (zh)• Ruso (ru)• Árabe (ar)• Coreano (ko)• Holandés (nl)  • Francés (fr)
+LANGUAGE = "da" # it can be others! 
 
 AUDIO_FOLDER = "audio_blocks"
 os.makedirs(AUDIO_FOLDER, exist_ok=True)
