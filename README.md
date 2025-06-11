@@ -135,6 +135,38 @@ Real-time streaming without fixed block durations.
 A graphical user interface (GUI) for easier interaction.
 Integration with other transcription/translation APIs for cost optimization.
 Enhanced error handling and logging for debugging.
+
+
+SOME RADIOS 
+
+DR P1                                http://live-icy.dr.dk/A/A03H.mp3  
+DR P2                                http://live-icy.dr.dk/A/A04H.mp3
+DR P3                                http://live-icy.dr.dk/A/A05H.mp3
+DR P4 K                            http://live-icy.dr.dk/A/A08H.mp3
+DR P5 K                            https://live-icy.dr.dk/A/A28H.mp3
+DR P6                                http://live-icy.dr.dk/A/A29H.mp3
+DR P8                                http://live-icy.dr.dk/A/A22H.mp3
+
+Klassisk live                        http://live-bauerdk.sharp-stream.com/klassisk_live.mp3
+LOUD                                https://stream.radioloud.dk/loud128
+myRock                              http://live-bauerdk.sharp-stream.com/myrock.mp3
+Nova FM                            http://live-bauerdk.sharp-stream.com/nova128.mp3
+Pop FM                              http://stream.popfm.dk:80/pop128.mp3  
+Radio 100 FM                    http://onair.100fmlive.dk:80/100fm_live.mp3
+Voice                                  http://onair.100fmlive.dk:80/100fm_live.mp3
+
+SR P1                                 https://sverigesradio.se/topsy/direkt/132-mp3
+SR P2                                 https://sverigesradio.se/topsy/direkt/2562-mp3
+SR P3                                 https://sverigesradio.se/topsy/direkt/164-mp3
+
+
+
+
+
+
+
+
+
 Get Involved
 
 This is an open-source project, and contributions are welcome! Check the README.md for instructions on how to set up and contribute to the project. Feel free to open issues or submit pull requests on GitHub.
