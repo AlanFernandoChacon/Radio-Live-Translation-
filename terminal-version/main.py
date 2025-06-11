@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os
 import time
 import subprocess
@@ -11,8 +12,7 @@ from queue import Queue
 
 # Cargar API Key desde .env
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-
+openai.api_key = YOUR API KEY
 # Configuración
 RADIO_URL = "https://live-icy.dr.dk/A/A03H.mp3"
 BLOCK_DURATION = 60  # segundos
@@ -40,12 +40,12 @@ def grabar_y_transcribir():
 
         try:
             with open(audio_file, "rb") as f:
-                response = openai.Audio.transcribe(
-                    model="whisper-1",
+                response = openai.audio.transcriptions.create(
                     file=f,
+                    model="whisper-1",
                     language=LANGUAGE
                 )
-                texto_da = response.get("text", "")
+                texto_da = response.text
         except Exception as e:
             texto_da = f"[ERROR de transcripción]: {e}"
 
@@ -83,12 +83,12 @@ def traducir_con_openai(texto, idioma_destino):
         "en": f"Translate this from Danish to English, no explanation:\n\"{texto}\""
     }
     try:
-        respuesta = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-                {"role": "user", "content": prompts[idioma_destino]}
-            ],
-            temperature=0.3
+        respuesta = openai.chat.completions.create(
+         model="gpt-3.5-turbo",
+         messages=[
+             {"role": "user", "content": prompts[idioma_destino]}
+         ],
+         temperature=0.3
         )
         return respuesta.choices[0].message.content.strip()
     except Exception as e:
